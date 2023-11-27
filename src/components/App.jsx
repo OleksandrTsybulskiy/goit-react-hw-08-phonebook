@@ -7,9 +7,10 @@ import { RestrictedRoute } from 'RestrictedRoute';
 import { PrivateRoute } from 'PrivateRoute';
 import { Wrapper } from './Wrapper/Wrapper';
 
-const Register = lazy(() => import('./Pages/Register'));
-const LoginPage = lazy(() => import('./Pages/Login'));
-const Contacts = lazy(() => import('./Pages/Contacts'));
+
+const Signin = lazy(() => import('../pages/SignIn'));
+const Login = lazy(() => import('../pages/Login'));
+const Contacts = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,13 +28,13 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
+            <RestrictedRoute redirectTo="/contacts" component={<Signin />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
           }
         />
         <Route
