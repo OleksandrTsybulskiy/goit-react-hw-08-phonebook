@@ -8,7 +8,7 @@ import { PrivateRoute } from 'PrivateRoute';
 import { Wrapper } from './Wrapper/Wrapper';
 
 
-const Signin = lazy(() => import('../pages/SignIn'));
+const Signin = lazy(() => import('../pages/Signin'));
 const Login = lazy(() => import('../pages/Login'));
 const Contacts = lazy(() => import('../pages/Contacts'));
 
