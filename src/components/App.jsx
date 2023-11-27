@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks';
 import { lazy, useEffect } from 'react';
 import { refreshUser } from 'redux/auth/operations';
-import { RestrictedRoute } from 'RestrictedRoute';
-import { PrivateRoute } from 'PrivateRoute';
+import { RestrictedRoutes } from './RestrictedRoutes';
+import { PrivateRoute } from './PrivateRoute';
 import { Wrapper } from './Wrapper/Wrapper';
 
 
@@ -28,13 +28,13 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Signin />} />
+            <RestrictedRoutes redirectTo="/contacts" component={<Signin />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+            <RestrictedRoutes redirectTo="/contacts" component={<Login />} />
           }
         />
         <Route
