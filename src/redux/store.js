@@ -17,14 +17,14 @@ import { authReducer } from './auth/AuthSlice';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token']
+  whitelist: ['token'],
 };
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactReducer,
-    filter: filterReducer
+    filter: filterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
