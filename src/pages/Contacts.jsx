@@ -1,15 +1,15 @@
-import { ContactForm } from '../components/ContactForm/ContactForm';
+import { ContactForm } from '../components/Contact/Contact';
 import { Filter } from '../components/Filter/Filter';
 import { ContactList } from '../components/ContactList/ContactList';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { gatContacts } from 'redux/contacts/operations';
+import { getContacts } from 'redux/contacts/operations';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(gatContacts());
+    dispatch(getContacts());
   }, [dispatch]);
 
   return (
