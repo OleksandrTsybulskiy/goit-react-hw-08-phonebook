@@ -3,26 +3,7 @@ import { Formik, Field } from 'formik';
 import { Button, FormStyled } from './Contact.styled';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addContact } from 'api/api';
-
-// const FormValidSchema = Yup.object().shape({
-//   name: Yup.string()
-//     .min(2, 'Too Short!')
-//     .max(50, 'Too Long!')
-//     .matches(
-//       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-//       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//     )
-//     .required('Required'),
-//   number: Yup.string()
-//     .min(2, 'Too Short!')
-//     .max(50, 'Too Long!')
-//     .matches(
-//       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
-//       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
-//     )
-//     .required('Required'),
-// });
+import { addContacts } from 'redux/contacts/operations';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -34,7 +15,7 @@ export const ContactForm = () => {
       number,
     };
 
-    dispatch(addContact(newContact));
+    dispatch(addContacts(newContact));
   };
 
   return (
@@ -43,7 +24,6 @@ export const ContactForm = () => {
         name: '',
         number: '',
       }}
-      // validationSchema={FormValidSchema}
       onSubmit={handleSubmit}
     >
       <FormStyled>

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { getContacts, deleteContact } from 'api/api';
+import { getContacts, deleteContact } from 'redux/contacts/operations';
 
 export const ContactListItem = () => {
   const dispatch = useDispatch();
