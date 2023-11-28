@@ -1,5 +1,7 @@
 import {RegisterForm} from '../components/RegisterForm/RegisterForm'
 
-export const Signin = () => {
+const Signin = () => {
     return <RegisterForm/>
 }
+
+export default Signin
