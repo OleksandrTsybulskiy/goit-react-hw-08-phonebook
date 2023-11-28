@@ -21,14 +21,7 @@ export const Input = styled.input`
   margin-right: auto;
   margin-left: auto;
   font-size: 20px;
-  color: var(--text);
-  border: var(--text);
-  background-color: var(--section);
   outline: transparent;
   border-radius: 20px;
   padding: 10px 20px;
-`;
-
-export const Label = styled.label`
-  color: var(--section);
 `;

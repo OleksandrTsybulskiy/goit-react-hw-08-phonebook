@@ -1,9 +1,18 @@
-import styled from 'styled-components';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import { AppBar } from '../AppBar/AppBar';
+import { WrapperContainer } from './Wrapper.styled';
 
-export const Wrapper = styled.div`
-display: flex;
-flex-direction: column;
-gap: 20px;
-margin: 0 auto;
-width: 600px;
-`
+
+export const Wrapper = () => {
+  return (
+    <>
+      <AppBar />
+      <WrapperContainer>
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
+      </WrapperContainer>
+    </>
+  );
+};
